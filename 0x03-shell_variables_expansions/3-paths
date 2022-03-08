@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(which ~PATH) | wc -l
+env | grep PATH |wc -l
