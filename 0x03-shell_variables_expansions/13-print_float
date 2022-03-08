@@ -1,0 +1,3 @@
+#!/bin/bash
+NUM="printf "%.2f""
+
