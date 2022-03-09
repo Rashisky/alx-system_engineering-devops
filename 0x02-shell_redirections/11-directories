@@ -1,2 +1,2 @@
 #!/bin/bash
-find -name './*' -thpe d | wc -l
+find ./ -name '*' -type d | wc -l
