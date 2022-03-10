@@ -1,2 +1,0 @@
-#!/bin/bash
-cat $CFILE > "$(echo $CFILE | tr '.c' '.o')"
