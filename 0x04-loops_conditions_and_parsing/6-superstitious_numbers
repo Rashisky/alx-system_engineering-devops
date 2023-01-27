@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# prints using case statement
 k=1
 while [ "$k" -le 20 ];
 do
