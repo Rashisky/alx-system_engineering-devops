@@ -4,12 +4,10 @@
 i=1
 while ((i <= 10));
 do
+    echo "Best Scool"
     if ((i == 9));
     then
-        echo "Best Scool"
         echo "Hi"
-    else
-        echo "Best Scool"
     fi
     ((i+=1))
 done
