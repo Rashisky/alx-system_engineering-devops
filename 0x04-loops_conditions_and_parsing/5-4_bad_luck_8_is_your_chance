@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+k=1
+while [ "$k" -le 10 ];
+do
+    if [[ "$k" = 4 ]]
+    then
+        echo "bad luck"
+    elif [ "$k" = 8 ]
+    then
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    ((k++))
+done
