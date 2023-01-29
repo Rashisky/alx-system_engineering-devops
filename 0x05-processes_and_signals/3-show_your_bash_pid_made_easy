@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Displays the PID, along with the process name of
+# processes whose name contain the word "bash"
+BASH="$(pidof bash)"
+BASH="($BASH)" # First wrap in parenthesis
+for i in "${BASH[@]}"; # This converts to array. Note {#BASH[@]} gives length
+do
+    echo "$i bash"
+done
