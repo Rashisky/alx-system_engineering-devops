@@ -12,7 +12,7 @@ terminate(){
     rm /var/run/myscript.pid
     exit
 }
-echo $$ > /var/run/myscript.pid
+echo "$$" > /var/run/myscript.pid
 
 while ((1))
 do
