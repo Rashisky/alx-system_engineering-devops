@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# SSH client configuration must be configre to use private
+# key ~/.ssh/school
+eval "$(ssh-agent)" && ssh-add ~/.ssh/school
