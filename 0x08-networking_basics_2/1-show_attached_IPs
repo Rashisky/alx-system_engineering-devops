@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ifconfig | grep -Po "(?<=inet\s)[0-9.]+"
