@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# SSH client configuration must be configre to use private
-# file ~/.ssh/school
-Host *
-	IdentityFile ~/.ssh/school
-	PasswordAuthentication no
