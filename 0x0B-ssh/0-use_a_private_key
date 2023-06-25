@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# use a giving Identity file to access a remote server
+# instead of using default file
+ssh -i ~/.ssh/school ubuntu@100.24.238.155
