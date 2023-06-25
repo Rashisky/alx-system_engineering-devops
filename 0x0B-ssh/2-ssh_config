@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Clien configuration file
+Host alx
+	Hostname ubuntu
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/school
