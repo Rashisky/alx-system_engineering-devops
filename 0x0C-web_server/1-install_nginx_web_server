@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Install nginx web server
+
+# Install Nginx
+apt-get install -y nginx
+
+# Create a default page that returns "Hello World!"
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+
+# Restart Nginx using service command
+service nginx restart
