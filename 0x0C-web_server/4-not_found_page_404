@@ -1,2 +1,53 @@
 #!/usr/bin/env bash
-#Install nginx web server
+# Customize Not found page 404
+# shellcheck disable=SC2016
+
+# update before installing
+apt-get -y update
+
+# Install Nginxs
+sudo apt-get install -y nginx
+
+# Allow uncomplicated Firewall
+sudo ufw allow 'Nginx HTTP'
+
+# Create a default page that returns "Hello World!"
+echo "Hello World!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+
+
+# Redirection
+config='server {
+            listen 80 default_server;
+            listen [::]:80 default_server;
+
+            root /var/www/html;
+            index index.html index.htm index.nginx-debian.html;
+
+            server_name _;
+
+            location / {
+                try_files $uri $uri/ =404;
+            }
+
+            location /redirect_me {
+                return 301 "https://www.rashisky.com";
+            }
+
+            error_page 404 /404.html;
+
+            location /404.html {
+                root /var/www/html;
+            }
+        }'
+
+echo "$config" > /etc/nginx/sites-available/default
+
+# Restart Nginx using service command
+# check if nginx is already started or not
+if [ $(pgrep -c nginx) -le 0 ]
+then
+	service nginx start
+else
+	service nginx restart
+fi
