@@ -18,12 +18,13 @@
 new_value='return 301 "https://www.rashisky.com";'
 sed -i 's|try_files .*|'"$new_value"'|' /etc/nginx/sites-available/default
 
+servic nginx restart
 
 # Restart Nginx using service command
 # check if nginx is already started or not
-if [ $(pgrep -c nginx) -le 0 ]
-then
-	service nginx start
-else
-	service nginx restart
-fi
+#if [ $(pgrep -c nginx) -le 0 ]
+#then
+#	service nginx start
+#else
+#	service nginx restart
+#fi
