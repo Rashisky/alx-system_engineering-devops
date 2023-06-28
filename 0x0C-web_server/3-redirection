@@ -2,7 +2,7 @@
 #Install nginx web server
 
 #update before installing
-sudo apt-get -y update
+apt-get -y update
 
 #Install Nginx
 # sudo apt-get install -y nginx
@@ -11,7 +11,7 @@ sudo apt-get -y update
 # sudo ufw allow 'Nginx HTTP'
 
 #Create a default page that returns "Hello World!"
-sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
+# sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
 
 
 # # Redirection
