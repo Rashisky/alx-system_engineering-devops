@@ -6,14 +6,14 @@
 apt-get -y update
 
 # Install Nginxs
-sudo apt-get install -y nginx
+apt-get install -y nginx
 
 # Allow uncomplicated Firewall
 sudo ufw allow 'Nginx HTTP'
 
 # Create a default page that returns "Hello World!"
-echo "Hello World!" > /var/www/html/index.html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
+sudo echo "Hello World!" > /var/www/html/index.html
+sudo echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 
 # Redirection
