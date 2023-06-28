@@ -13,12 +13,12 @@
 # Create a default page that returns "Hello World!"
 #echo "Hello World!" > /var/www/html/index.nginx-debian.html
 
+# sed -i 's|try_files .*|'"$new_value"'|' /etc/nginx/sites-available/default
 
 # Redirection
-new_value='return 301 "https://www.rashisky.com";'
+new_value='return 301 "https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4";'
 sed -i 's|try_files .*|'"$new_value"'|' /etc/nginx/sites-available/default
-
-servic nginx restart
+service nginx restart
 
 # Restart Nginx using service command
 # check if nginx is already started or not
