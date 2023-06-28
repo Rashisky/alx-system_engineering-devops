@@ -2,16 +2,16 @@
 # Install nginx web server
 
 # update before installing
-apt-get -y update
+#apt-get -y update
 
 # Install Nginx
-apt-get install -y nginx
+#apt-get install -y nginx
 
 # Allow uncomplicated Firewall
-ufw allow 'Nginx HTTP'
+#ufw allow 'Nginx HTTP'
 
 # Create a default page that returns "Hello World!"
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
+#echo "Hello World!" > /var/www/html/index.nginx-debian.html
 
 
 # Redirection
