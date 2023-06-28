@@ -8,21 +8,21 @@ sudo apt-get -y update
 sudo apt-get install -y nginx
 
 #Allow uncomplicated Firewall
-ufw allow 'Nginx HTTP'
+sudo ufw allow 'Nginx HTTP'
 
 #Create a default page that returns "Hello World!"
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
 
 
 # Redirection
 new_value='return 301 "https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4";'
 sed -i 's|try_files .*|'"$new_value"'|' /etc/nginx/sites-available/default
-
+service nginx restart
 # Restart Nginx using service command
 # check if nginx is already started or not
-if [ $(pgrep -c nginx) -le 0 ]
-then
-	service nginx start
-else
-	service nginx restart
-fi
+# if [ $(pgrep -c nginx) -le 0 ]
+# then
+# 	service nginx start
+# else
+# 	service nginx restart
+# fi
