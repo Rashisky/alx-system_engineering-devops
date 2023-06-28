@@ -3,13 +3,13 @@
 # shellcheck disable=SC2016
 
 # update before installing
-apt-get -y update
+# apt-get -y update
 
 # # Install Nginx
-sudo apt-get install -y nginx
+# sudo apt-get install -y nginx
 
 # # Allow uncomplicated Firewall
-sudo ufw allow 'Nginx HTTP'
+# sudo ufw allow 'Nginx HTTP'
 
 # Create a default page that returns "Hello World!"
 echo "Hello World!" > /var/www/html/index.html
@@ -31,7 +31,7 @@ config='server {
             }
 
             location /redirect_me {
-                return 301 "https://www.rashisky.com";
+                return 301 "https://www.rashisky.com\n";
             }
         }'
 
