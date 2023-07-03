@@ -12,7 +12,7 @@
 # sudo ufw allow 'Nginx HTTP'
 
 # Create a default page that returns "Hello World!"
-echo "Hello World!" > /var/www/html/index.html
+# echo "Hello World!" > /var/www/html/index.html
 
 
 # Redirection
