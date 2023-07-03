@@ -10,10 +10,6 @@ apt-get install -y nginx
 
 # Create a default page that returns "Hello World!"
 echo "Hello World!" > /var/www/html/index.html
-
-
-# Create a default page that returns "Hello World!"
-echo "Hello World!" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 # Redirection
@@ -36,8 +32,8 @@ config="server {
 
             error_page 404 /404.html;
 
-            location /404.html {
-                root /var/www/html;
+            location = /404.html {
+                internal;
             }
         }"
 
@@ -51,3 +47,12 @@ then
 else
 	service nginx restart
 fi
+
+# NOTE: There is a slight difference btw the two below
+# location = /404.html {
+#                 internal;
+#             }
+# and
+# location /404.html {
+#                 root /var/www/html;
+#             }
