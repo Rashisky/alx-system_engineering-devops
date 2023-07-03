@@ -33,9 +33,15 @@ config="server {
             location /redirect_me {
                 return 301 \"https://www.rashisky.com\";
             }
+
+            error_page 404 /404.html;
+
+            location /404.html {
+                root /var/www/html;
+            }
         }"
 
-echo -e "$config" > /etc/nginx/sites-available/default
+echo "$config" > /etc/nginx/sites-available/default
 
 # Restart Nginx using service command
 # check if nginx is already started or not
