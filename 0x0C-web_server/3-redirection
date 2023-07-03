@@ -3,13 +3,13 @@
 # shellcheck disable=SC2016
 
 # update before installing
-apt-get -y update
+# apt-get -y update
 
 # # Install Nginx
-apt-get install -y nginx
+# apt-get install -y nginx
 
 # # Allow uncomplicated Firewall
-sudo ufw allow 'Nginx HTTP'
+# sudo ufw allow 'Nginx HTTP'
 
 # Create a default page that returns "Hello World!"
 echo "Hello World!" > /var/www/html/index.html
@@ -34,7 +34,7 @@ config='server {
             }
         }'
 
-sudo echo "$config" > /etc/nginx/sites-available/default
+echo "$config" > /etc/nginx/sites-available/default
 
 # Restart Nginx using service command
 # check if nginx is already started or not
