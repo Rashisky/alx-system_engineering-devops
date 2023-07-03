@@ -37,7 +37,7 @@ config="server {
             }
         }"
 
-echo -e "$config" > /etc/nginx/sites-available/default
+echo "$config" > /etc/nginx/sites-available/default
 
 # Restart Nginx using service command
 # check if nginx is already started or not
