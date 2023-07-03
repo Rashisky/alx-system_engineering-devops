@@ -4,21 +4,11 @@
 # update before installing
 apt-get update
 
-# # Install Nginx
+# Install Nginx
 apt-get install -y nginx
-
-# # Allow uncomplicated Firewall
-# sudo ufw allow 'Nginx HTTP'
-
-# create directory if not be default
-# mkdir -p /var/www/html/
-
-# change the mode of the created directory
-# sudo chmod -R 755 /var/www
 
 # Create a default page that returns "Hello World!"
 echo "Hello World!" > /var/www/html/index.html
-
 
 # Redirection
 config="server {
