@@ -43,7 +43,7 @@ echo -e "$config" > /etc/nginx/sites-available/default
 
 # Restart Nginx using service command
 # check if nginx is already started or not
-if [ $(pgrep -c nginx) -le 0 ]
+if [ "$(pgrep -c nginx)" -le 0 ]
 then
 	service nginx start
 else
