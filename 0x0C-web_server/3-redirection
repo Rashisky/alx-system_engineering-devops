@@ -2,10 +2,10 @@
 # Redirection
 
 # update before installing
-# apt-get update
+apt-get update
 
 # # Install Nginx
-# apt-get install -y nginx
+apt-get install -y nginx
 
 # # Allow uncomplicated Firewall
 # sudo ufw allow 'Nginx HTTP'
@@ -17,7 +17,7 @@
 # sudo chmod -R 755 /var/www
 
 # Create a default page that returns "Hello World!"
-# echo "Hello World!" > /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
 
 
 # Redirection
@@ -35,7 +35,7 @@ config="server {
             }
 
             location /redirect_me {
-                return 301 https://www.rashisky.com\n;
+                return 301 \"https://www.rashisky.com\";
             }
         }"
 
