@@ -3,10 +3,10 @@
 
 
 # update before installing
-apt-get update
+# apt-get update
 
 # Install Nginx
-apt-get install -y nginx
+# apt-get install -y nginx
 
 # Create a default page that returns "Hello World!"
 echo "Hello World!" > /var/www/html/index.html
@@ -22,6 +22,10 @@ config="server {
 
             server_name _;
 
+            location / {
+                try_files \$uri \$uri/ =404;
+            }
+
             location /redirect_me {
                 return 301 \"https://www.rashisky.com\";
             }
@@ -33,7 +37,7 @@ config="server {
             }
         }"
 
-echo "$config" > /etc/nginx/sites-available/default
+echo -e "$config" > /etc/nginx/sites-available/default
 
 # Restart Nginx using service command
 # check if nginx is already started or not
