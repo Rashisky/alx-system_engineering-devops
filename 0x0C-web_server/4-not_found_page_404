@@ -10,7 +10,7 @@ apt-get install -y nginx
 
 # Create a default page that returns "Hello World!"
 echo "Hello World!" > /var/www/html/index.html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
+echo -e "Ceci n'est pas une page\n" > /var/www/html/404.html
 
 # Redirection
 config="server {
@@ -40,7 +40,13 @@ config="server {
 echo -e "$config" > /etc/nginx/sites-available/default
 
 # Restart Nginx using service command
-service nginx restart
+# check if nginx is already started or not
+if [ "$(pgrep -c nginx)" -le 0 ]
+then
+	service nginx start
+else
+	service nginx restart
+fi
 
 # NOTE: There is a slight difference btw the two below
 # location = /404.html {
