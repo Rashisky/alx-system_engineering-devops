@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Redirection
-# shellcheck disable=SC2016
 
 # update before installing
 # apt-get -y update
@@ -16,7 +15,7 @@
 
 
 # Redirection
-config='server {
+config="server {
             listen 80 default_server;
             listen [::]:80 default_server;
 
@@ -26,13 +25,13 @@ config='server {
             server_name _;
 
             location / {
-                try_files $uri $uri/ =404;
+                try_files \$uri \$uri/ =404;
             }
 
             location /redirect_me {
-                return 301 "https://www.rashisky.com\n";
+                return 301 https://www.rashisky.com\n;
             }
-        }'
+        }"
 
 echo "$config" > /etc/nginx/sites-available/default
 
