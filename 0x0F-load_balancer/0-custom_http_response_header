@@ -2,7 +2,6 @@
 # Configure Nginx so that its HTTP response contains a custom header
 # (on web-01 and web-02)
 
-
 server="$(hostname | cut -d "@" -f 2)"
 header="add_header \"X-Served-By\" \"$server\""
 
