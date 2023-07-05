@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Install and Configure HAproxy on both Servers
+
+# update before installing
+apt-get update
+
+# Install haproxy
+apt-get install -y haproxy
+
+config_file="
+    listen load_balancer
+    mode http
+    balance roundrobin
+    bind *:80
+    option httpclose
+    option forwardfor
+    server 18337-web-01 100.24.238.155:80 check
+    server 18337-web-02 100.25.129.98:80 check"
+
+echo -e "$config_file" > /etc/haproxy/haproxy.cfg
