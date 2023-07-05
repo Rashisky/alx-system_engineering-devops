@@ -18,3 +18,5 @@ config_file="
     server 18337-web-02 100.25.129.98:80 check"
 
 echo -e "$config_file" > /etc/haproxy/haproxy.cfg
+
+service haproxy start
