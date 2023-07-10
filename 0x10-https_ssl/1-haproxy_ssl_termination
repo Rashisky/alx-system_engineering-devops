@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# HAproxy SSL termination.
+# Create a certificate using "certbot" and configure "HAproxy" to accept
+# encrypted traffic for your subdomain www.
+
+frontend my_frontend
+    bind *:443 ssl crt /etc/letsencrypt/live/web-01.adejare.tech/cert.pem
+    bind *:443 ssl crt /etc/letsencrypt/live/web-02.adejare.tech/cert.pem
+    mode tcp
+    option tcplog
+    use_backend my_root_backend
+
+backend my_root_backend
+    mode tcp
+    balance roundrobin
+    http-request set-path /
