@@ -6,11 +6,11 @@
 frontend my_frontend
     bind *:443 ssl crt /etc/letsencrypt/live/web-01.adejare.tech/cert.pem
     bind *:443 ssl crt /etc/letsencrypt/live/web-02.adejare.tech/cert.pem
-    mode tcp
-    option tcplog
+    mode http
+    option forwardfor
     use_backend my_root_backend
 
 backend my_root_backend
-    mode tcp
+    mode http
     balance roundrobin
     http-request set-path /
