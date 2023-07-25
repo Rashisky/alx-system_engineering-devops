@@ -2,8 +2,8 @@
 """Gather data from an API"""
 
 if __name__ == '__main__':
-    from sys import argv
     import requests
+    from sys import argv
 
     url = 'https://jsonplaceholder.typicode.com/'
     users = requests.get(url + f'users/{argv[1]}').json()
@@ -13,5 +13,5 @@ if __name__ == '__main__':
                       if task.get('completed', '')]
 
     print(f"Employee {users.get('name', '')} is done with tasks\
-        ({len(task_completed)}/{len(todos)}):")
+({len(task_completed)}/{len(todos)}):")
     [print(f'\t {task}') for task in task_completed]
