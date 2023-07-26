@@ -16,12 +16,6 @@ if __name__ == '__main__':
          } for r in todos
          ]
 
-#     data = [
-#         {'task: {}, completed : {}, username: {}'
-#          .format(r.get('title'), eval(str(r.get('completed'))), user_name)
-#          } for r in todos
-#     ]
-
     json_data = {argv[1]: [items for items in data]}
     with open(f'{argv[1]}.json', 'w', encoding='utf-8') as file:
         json.dump(json_data, file)
