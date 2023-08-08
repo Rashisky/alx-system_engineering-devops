@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" finds the number of subscribers """
+""" finds the top 10 titles """
 
 import requests
 from sys import argv
 
 
 def top_ten(subreddit):
-    """ returns total number of subscribers """
+    """ returns top 10 hot titles """
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     custom_user_agent = "vscode/1.81.0 0x16-api_advanced (by rashisky)"
     headers = {"User-Agent": custom_user_agent}
