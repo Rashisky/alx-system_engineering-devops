@@ -1,0 +1,14 @@
+[Unit]
+Description=Starts gunicorn on system startup
+After=network.target
+
+[Service]
+User=rashisky
+Group=rashisky
+WorkingDirectory=/home/rashisky/AirBnB_clone_v4/
+StandardError=/tmp/airbnb-error.log
+StandardOutput=/tmp/airbnb-access.log
+ExecStart=/usr/bin/gunicorn --workers 3 --bind 0.0.0.0:5003 web_dynamic.2-hbnb:app
+
+[Install]
+WantedBy=multi-user.target
