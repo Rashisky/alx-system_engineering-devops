@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# Prints Best Scool Using for loop
-
-for ((c=0; c<=9; c++));
-do
-    echo "Best School";
-done

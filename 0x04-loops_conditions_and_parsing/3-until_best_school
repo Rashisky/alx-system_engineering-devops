@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# Prints "Best School" using Until loop
-i=0
-
-until ((i == 10));
-do
-    echo "Best School"
-    ((i+=1))
-done
